@@ -14,7 +14,7 @@ namespace SimTrain
      //   static public Task[] TaskArray = new Task[30];
 
         public List<Task> TaskArray = new List<Task>();
-        public List<String> AllPrinters = new List<String>();
+        public List<Printer> AllPrinters = new List<Printer>();
         int i;
         public Random rnd = new Random();
 
@@ -29,11 +29,11 @@ namespace SimTrain
             for (i = 0; i <= 9; i++)
             {
                 MatrixPrinterArray[i] = new MatrixPrinter(i,rnd.Next(0, 2));
-                AllPrinters.Add(MatrixPrinterArray[i].GetNamePrinter());
-                InkjetPrinterArray[i] = new InkjetPrinter(i,rnd.Next(0, 2));
-                AllPrinters.Add(InkjetPrinterArray[i].GetNamePrinter());
-                LaserPrinterArray[i] = new LaserPrinter(i,rnd.Next(0, 2));
-                AllPrinters.Add(LaserPrinterArray[i].GetNamePrinter());
+                AllPrinters.Add(MatrixPrinterArray[i]);
+                InkjetPrinterArray[i] = new InkjetPrinter(i+10,rnd.Next(0, 2));
+                AllPrinters.Add(InkjetPrinterArray[i]);
+                LaserPrinterArray[i] = new LaserPrinter(i+20,rnd.Next(0, 2));
+                AllPrinters.Add(LaserPrinterArray[i]);
             }
         }
 
@@ -70,30 +70,29 @@ namespace SimTrain
                 }
             }
         }
-        public Printer GetRandomPrinter(int n)
+        public Printer GetRandomPrinter(int type)
         {
             int i = rnd.Next(0, 10);
-            switch (n) {
+            switch (type) {
                 case 1:
                 {
                     foreach (Printer pr in MatrixPrinterArray)
-                        if (pr.GetId()== i) return pr;
+                        if (pr.Get_Id()== i) return pr;
                         break;
                 }
                 case 2:
                 {
                     foreach (Printer pr in InkjetPrinterArray)
-                        if (pr.GetId() == i) return pr;
+                        if (pr.Get_Id() == i) return pr;
                         break;
                 }
                 case 3:
                     {
                         foreach (Printer pr in LaserPrinterArray)
-                            if (pr.GetId() == i) return pr;
+                            if (pr.Get_Id() == i) return pr;
                         break;
                     }
             }
-   
             return null;
         }
     }

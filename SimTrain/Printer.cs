@@ -15,43 +15,25 @@ namespace SimTrain
         protected int max_resolution;                     // Максимальное разрешение печати
         protected int speed_print;                        // Скорость мечати
         protected int max_capacity;                       // Емкость лотка
-        protected int type;                    // Признак матричного принтера
+        protected int matrix_printer;                    // Признак матричного принтера
         protected int print_on_lenta;                    // Возможность печатать на бесконечной ленте
         protected int printColor;                          // Возможность цветной печати
         protected int printLaser;                          // Возможность бесконечного лотка
         protected bool broken;
-        private Random rnd=new Random();
+        protected Random rnd=new Random();
 
         public Printer()
         {
-         //   Id=id1;
-        //    Name = "Принтер № " + Convert.ToString(Id);
             max_width = rnd.Next(10, 210);
             max_height = rnd.Next(10, 210);
             max_resolution = rnd.Next(50, 1200);
             speed_print = rnd.Next(1, 10);
-            matrix_printer = rnd.Next(0, 2);
             max_capacity = rnd.Next(1,600);
-            print_on_lenta = rnd.Next(0, 2);
-            broken = false;
-            if (matrix_printer == 1)
-            {
-                print_on_lenta = rnd.Next(0, 2);
-                printColor = 0;
-            }
-            else
-            {
-                printLaser = rnd.Next(0, 2);
-                if (printLaser == 1)
-                {
-                    printColor = 0;
-                    print_on_lenta = rnd.Next(0, 2);
-                }
-                else printColor = rnd.Next(0, 2);
-            }
+
         }
-        public int GetId() { return Id; }                                                                                // ID принтера
-        public string GetName() { return Name; }                                                                        // Имя
+        public int Get_Id() { return Id; }                                                                                // ID принтера
+        public string Get_Type() { return this.Type() == 1 ? "Матричный" : (this.Type() == 2 ? "Струйный" : "Лазерный"); }
+        public string Get_Name() { return Name; }                                                                        // Имя
         public int Get_max_width() { return max_width; }                                                                // Максимальная ширина листа
         public int Get_max_height() { return max_height; }                                                              // Максимальная высота листа
         public int Get_max_resolution() { return max_resolution; }                                                      // Максимальное разрешение печати
@@ -63,21 +45,12 @@ namespace SimTrain
         public string Get_printLaser() { return this.printLaser == 1 ? "Да" : "Нет"; }                                   // Признак лазерного принтера
         public string Get_broken() { return this.broken == true ? "Да" : "Нет"; }                                     // Признак поломки
 
-        public int Type()
+        public virtual int Type()
         {
             return 0;
         }
 
-        public String GetNamePrinter()
-        {
-            return this.Name;
-        }
         public bool CanColorPrint()
-        {
-            return false;
-        }
-
-        public bool CanInfinityPrint()
         {
             return false;
         }

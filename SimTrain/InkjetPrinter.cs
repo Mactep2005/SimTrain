@@ -13,10 +13,12 @@ namespace SimTrain
         {
             this.Id = id;
             Name = "Принтер №" + Convert.ToString(Id)+ " струйный";
+            printColor = color;
             CanPrintColor =color;
+            print_on_lenta = 0;
         }
 
-        public int Type()
+        public override int Type()
         {
             return 2;
         }

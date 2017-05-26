@@ -11,12 +11,15 @@ namespace SimTrain
 
         public MatrixPrinter(int id, int lenta)   // Конструктор матричного принтера
         {
+
+            print_on_lenta = lenta;
+            printColor = 0;
             this.Id = id;
             Name = "Принтер №" + Convert.ToString(Id)+ " матричный";
             PrintOnLenta =lenta;
         }
 
-        public int Type()
+        public override int Type()
         {
             return 1;
         }

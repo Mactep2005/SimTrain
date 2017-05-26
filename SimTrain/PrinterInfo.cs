@@ -7,8 +7,9 @@ namespace SimTrain
 {
     public interface PrinterInfo
     {
-        int GetId();                                 // ID принтера
-        string GetName();                            // Имя
+        int Get_Id();                                 // ID принтера
+        string Get_Type();                           // Тип   
+        string Get_Name();                            // Имя
         int Get_max_width();                          // Максимальная ширина листа
         int Get_max_height();                         // Максимальная высота листа
         int Get_max_resolution();                     // Максимальное разрешение печати
