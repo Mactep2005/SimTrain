@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace SimTrain
 {
-    class Queue
+    public class Queue
     {
+        private int id;
+        private Printer Printer;
+        private string Name;
+
+        public Queue(Printer pr, string name)
+        {
+            Printer=pr;
+            Name = name;
+            id++;
+        }
+
+        public int GetPaperCount() //количество страниц для печати
+        {
+            return 0;
+        }
+
+        public int GetError()
+        {
+            return 0;
+        }
     }
 }

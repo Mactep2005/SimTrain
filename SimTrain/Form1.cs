@@ -16,5 +16,16 @@ namespace SimTrain
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Init ttt= new Init();
+            listBox1.DataSource = ttt.AllPrinters;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label2.Text=
+        }
     }
 }

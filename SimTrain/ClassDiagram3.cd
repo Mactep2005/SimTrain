@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimTrain.Printer">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACOQYBAQIABAQgUAAFkBgQAAAAAIBAAAQAAAAKABAI=</HashCode>
+      <FileName>Printer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimTrain.Task">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAARAAAAAAAAAAAAAAAiAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimTrain.MatrixPrinter">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEA=</HashCode>
+      <FileName>MatrixPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimTrain.LaserPrinter">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>LaserPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimTrain.InkjetPrinter">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>InkjetPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimTrain.Queue">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Queue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimTrain.Init">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEAIAAAAQAAAAAAAAAAAQAAAhAABAIAAIAAAAAAA=</HashCode>
+      <FileName>Init.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SimTrain.PrinterInfo">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIQIBAAAAAAAAAAABgAAAAAAAAIBAAAAAAAAIABAI=</HashCode>
+      <FileName>PrinterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
