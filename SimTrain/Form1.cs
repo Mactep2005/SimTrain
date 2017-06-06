@@ -12,22 +12,48 @@ namespace SimTrain
 {
     public partial class Form1 : Form
     {
-        Init ttt = new Init();
+        Init ttt ;
         public Form1()
         {
             InitializeComponent();
         }
 
+             
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach(Printer pr in ttt.AllPrinters)
-            listBox1.Items.Add(pr.Get_Name()+" ширина "+pr.Get_max_width()+" ВЫСОТА "+ pr.Get_max_height()) ;
+            ttt = new Init(this);
+            ListViewItem item1;
+            ImageList imageListLarge = new ImageList();
+            imageListLarge.ImageSize = new Size(90, 65);
+      //      listPrinters.LargeImageList = imageListLarge;
+      //      this.listPrinters.View = View.Details;
+            foreach (PrinterInfo pr in ttt.AllPrinters)
+            {
+                item1 = new ListViewItem();
+                item1.Text = pr.Get_Name();
+                if (pr.Get_Type() == "Матричный") item1.ImageIndex = 0;
+                if (pr.Get_Type() == "Струйный") item1.ImageIndex = 1; 
+                if (pr.Get_Type() == "Лазерный") item1.ImageIndex = 2;
+                listPrinters.Items.Add(item1);
+            }
+
+            button3.Enabled = false;
+            label14.Text="Создано "+Convert.ToString(cntPrn.Value)+" притеров и "+Convert.ToString(cntTask.Value)+" случайных заданий";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
+        }
+        public int getCntPrn()
+        {
+            return (int)cntPrn.Value; 
+        }
+
+        private void listPrinters_SelectedIndexChanged(object sender, EventArgs e)
+        {
             foreach (PrinterInfo pri in ttt.AllPrinters)
-                if (pri.Get_Name() == listBox1.SelectedItem.ToString())
+                if (pri.Get_Id() == listPrinters.FocusedItem.Index)
                 {
                     label2.Text = "Тип: " + pri.Get_Type();
                     label3.Text = "Имя: " + pri.Get_Name();

@@ -20,15 +20,15 @@ namespace SimTrain
         protected int printColor;                          // Возможность цветной печати
         protected int printLaser;                          // Возможность бесконечного лотка
         protected bool broken;
-        protected Random rnd=new Random();
+        protected Random rnd = new Random();
 
         public Printer()
         {
-            max_width = rnd.Next(10, 210);
-            max_height = rnd.Next(10, 210);
-            max_resolution = rnd.Next(50, 1200);
-            speed_print = rnd.Next(1, 10);
-            max_capacity = rnd.Next(1,600);
+            max_width = RandNumber(10, 210);
+            max_height = RandNumber(10, 210);
+            max_resolution = RandNumber(50, 1200);
+            speed_print = RandNumber(1, 10);
+            max_capacity = RandNumber(1,600);
 
         }
         public int Get_Id() { return Id; }                                                                                // ID принтера
@@ -53,6 +53,14 @@ namespace SimTrain
         public bool CanColorPrint()
         {
             return false;
+        }
+        public static int RandNumber(int Low, int High)
+        {
+            Random rndNum = new Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
+
+            int rnd = rndNum.Next(Low, High);
+
+            return rnd;
         }
     }
 }

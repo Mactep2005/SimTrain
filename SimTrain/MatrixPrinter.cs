@@ -14,6 +14,7 @@ namespace SimTrain
 
             print_on_lenta = lenta;
             printColor = 0;
+            matrix_printer = 1;
             this.Id = id;
             Name = "Принтер №" + Convert.ToString(Id)+ " матричный";
             PrintOnLenta =lenta;
