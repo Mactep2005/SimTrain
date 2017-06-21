@@ -12,7 +12,7 @@ namespace SimTrain
 {
     public partial class Form1 : Form
     {
-        Init ttt ;
+        public Init ttt ;
         public Form1()
         {
             InitializeComponent();
@@ -67,6 +67,26 @@ namespace SimTrain
                     label11.Text = "Цветная печать: " + pri.Get_printColor();
                     label12.Text = "Поломка: " + pri.Get_broken();
                 }
+        }
+
+        private void Go_Click(object sender, EventArgs e)
+        {
+            foreach(Task tsk in ttt.TaskArray)
+            {
+                switch (tsk.Get_Status())
+                {
+                    case 0:
+                        {
+                            Queue qu = new Queue();
+                            tsk.Set_Status = qu.AddTask(tsk, this) ;
+                            break;
+                        }
+                    default:
+                        {
+
+                        }
+                }
+            }
         }
     }
 }

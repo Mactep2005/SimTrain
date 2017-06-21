@@ -60,7 +60,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabTask = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listTask = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rAll = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
@@ -99,6 +99,7 @@
             this.Go.TabIndex = 0;
             this.Go.Text = "&Takt";
             this.Go.UseVisualStyleBackColor = true;
+            this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
             // checkBox1
             // 
@@ -380,20 +381,21 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.listBox2);
+            this.groupBox4.Controls.Add(this.listTask);
             this.groupBox4.Location = new System.Drawing.Point(6, 60);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(538, 203);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             // 
-            // listBox2
+            // listTask
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 19);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(526, 173);
-            this.listBox2.TabIndex = 0;
+            this.listTask.FormattingEnabled = true;
+            this.listTask.HorizontalScrollbar = true;
+            this.listTask.Location = new System.Drawing.Point(6, 19);
+            this.listTask.Name = "listTask";
+            this.listTask.Size = new System.Drawing.Size(526, 173);
+            this.listTask.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -622,7 +624,6 @@
         private System.Windows.Forms.TabPage tabTask;
         private System.Windows.Forms.TabPage tabReport;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton rAll;
         private System.Windows.Forms.RadioButton radioButton5;
@@ -650,6 +651,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListView listPrinters;
         private System.Windows.Forms.ImageList imagePrinters;
+        public System.Windows.Forms.ListBox listTask;
     }
 }
 
